@@ -1,0 +1,38 @@
+<html><head><title>Epydoc Redirect Page</title>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+<!--
+var pages = ["model.charsetGenerators.PrintableASCIIGeneratorUpper-c", "model.charsetGenerators.ExtendedASCIIGeneratorUpper-c", "model.charsetGenerators.AlphaNumericGeneratorUpper-c", "model.charsetGenerators.PrintableASCIIGenerator-c", "model.charsetGenerators.ExtendedASCIIGenerator-c", "model.charsetGenerators.AlphaNumericGenerator-c", "model.charsetGenerators.ASCIIGeneratorUpper-c", "model.charsetGenerators.AlphaGeneratorUpper-c", "model.charsetGenerators.NumericGenerator-c", "model.charsetGenerators.ASCIIGenerator-c", "model.charsetGenerators.AlphaGenerator-c", "model.observable.IObservableController-c", "model.TwistedClient.ChatClientFactory-c", "model.TwistedClient.InputEventHandler-c", "model.TwistedServer.ChatServerFactory-c", "model.observable.IObservableServer-c", "model.observer.IObserverController-c", "model.TwistedClient.ChatClient-c", "model.TwistedServer.ChatServer-c", "model.observer.IServerObserver-c", "model.idGenerator.IDGenerator-c", "model.observable.IObservable-c", "model.observer.printObserver-c", "model.controller.Controller-c", "model.network.ClientWrapper-c", "model.network.ServerWrapper-c", "model.observer.ILogObserver-c", "model.workMaster.WorkMaster-c", "model.logger.Logger.__impl-c", "model.observable.ILoggable-c", "model.workRange.WorkRange-c", "model.workSlave.WorkSlave-c", "model.node.NetworkedNode-c", "model.observer.IObserver-c", "model.charsetGenerators-m", "model.task.ParallelTask-c", "model.view.ChoiceScreen-c", "model.node.LocalNode-c", "model.TwistedClient-m", "model.TwistedServer-m", "model.logger.Logger-c", "model.idGenerator-m", "model.controller-m", "model.internetIP-m", "model.observable-m", "model.workMaster-m", "model.workRange-m", "model.workSlave-m", "model.hash.Hash-c", "model.node.Node-c", "model.task.Task-c", "model.observer-m", "model.network-m", "model.lanman-m", "model.logger-m", "model.hash-m", "model.node-m", "model.task-m", "model.view-m", "model-m"];
+var dottedName = get_anchor();
+if (dottedName) {
+    var target = redirect_url(dottedName);
+    if (target) window.location.replace(target);
+}
+// -->
+</script>
+
+<h3>Epydoc Auto-redirect page</h3>
+
+<p>When javascript is enabled, this page will redirect URLs of
+the form <tt>redirect.html#<i>dotted.name</i></tt> to the
+documentation for the object with the given fully-qualified
+dotted name.</p>
+<p><a id="message"> &nbsp; </a></p>
+
+<script type="text/javascript">
+<!--
+if (dottedName) {
+    var msg = document.getElementById("message");
+    msg.innerHTML = "No documentation found for <tt>"+
+                    dottedName+"</tt>";
+}
+// -->
+</script>
+
+</body>
+</html>

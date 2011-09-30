@@ -1,0 +1,515 @@
+[2011-09-19 21:15:17] Controller      - getIP()              ~*~ Signal  : IP is: localhost
+[2011-09-19 21:15:18] TwistedServer   - __init__()           ~*~ Signal  : Server Started
+[2011-09-19 21:15:18] ServerWrapper   - setupServer()        ~*~ Signal  : Setting up the server on port 55555
+[2011-09-19 21:15:22] Controller      - determineCharset()   ~*~ Signal  : Determined the charset to be: <charsetGenerators.AlphaNumericGeneratorUpper instance at 0x208b758>
+[2011-09-19 21:15:22] Controller      - setCharset()         ~*~ Signal  : Charset to search in is: alphanumeric
+[2011-09-19 21:15:22] Controller      - setLength()          ~*~ Signal  : Password length to check up to is: 4
+[2011-09-19 21:15:22] Controller      - setBenchLength()     ~*~ Signal  : Bench password length: 3
+[2011-09-19 21:15:22] Controller      - setPasswords()       ~*~ Signal  : Passwords to check for are: ['c2265b23734e0dacaad3b435b51404ee', '5d3872c04445e010aad3b435b51404ee', '6ba2730853fc2c19aad3b435b51404ee', '6d9dd43d64b5222aaad3b435b51404ee', 'ce045ff77f9d89e2aad3b435b51404ee']
+[2011-09-19 21:15:22] Controller      - runBenchmark()       ~*~ Signal  : Running benchmark
+[2011-09-19 21:15:22] WorkMaster      - runBenchmark()       ~*~ Signal  : deferring runBenches to thread
+[2011-09-19 21:15:22] WorkMaster      - runBenches()         ~*~ Signal  : Running benchmarks on 1 nodes
+[2011-09-19 21:15:22] LocalNode       - runBenchmark()       ~*~ Signal  : Starting the benchmark (node=#a,hash=lanman,length=3)
+[2011-09-19 21:15:22] WorkMaster      - runBenches()         ~*~ Signal  : All nodes have been set to bench
+[2011-09-19 21:15:22] LocalNode       - benchmark()          ~*~ Signal  : Beginning benchmark
+[2011-09-19 21:15:22] LocalNode       - guessPasswords()     ~*~ Signal  : Starting subprocesses enabling parallelism
+[2011-09-19 21:15:25] LocalNode       - fetchResults()       ~*~ Signal  : Work completed
+[2011-09-19 21:15:25] LocalNode       - benchmark()          ~*~ Signal  : Benchmark finished
+[2011-09-19 21:15:25] LocalNode       - runBenchmark()       ~*~ Signal  : Benchmark completed with result: 15059 (node=#a)
+[2011-09-19 21:15:25] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Bench', ...
+[2011-09-19 21:15:25] WorkMaster      - update()             ~*~ Signal  : The local node returned these benches: '{"#a" : 15059}'
+[2011-09-19 21:15:25] WorkMaster      - addBench()           ~*~ Signal  : Added bench {"#a" : 15...
+[2011-09-19 21:15:25] WorkMaster      - fetchBenchResult()   ~*~ Signal  : Benches have completed: {'#a': 15059}
+[2011-09-19 21:15:25] Controller      - update()             ~*~ Signal  : Controller was updated: Benches:{'#a': ...
+[2011-09-19 21:15:25] Controller      - addBench()           ~*~ Signal  : Added bench {'#a': 150...
+[2011-09-19 21:15:25] Controller      - update()             ~*~ Signal  : Controller was updated: Bench:Done...
+[2011-09-19 21:15:25] Controller      - update()             ~*~ Signal  : Finished benching
+[2011-09-19 21:15:26] Controller      - benchCallback()      ~*~ Signal  : Received benchmark results: 15059 p/s
+[2011-09-19 21:15:26] WorkMaster      - getMaxTime()         ~*~ Signal  : Maximum seconds to run is 111s with a HashSpeed of 15059 and 1679616 possibilities
+[2011-09-19 21:15:26] Controller      - getMaxTime()         ~*~ Signal  : Maximum run time is: 111s
+[2011-09-19 21:15:26] View            - setSliderMax()       ~*~ Signal  : Progressbar max = 111s
+[2011-09-19 21:15:26] Controller      - getMaxTimeAsDate()   ~*~ Signal  : Maximum run time:  1 minute 51 seconds
+[2011-09-19 21:15:26] WorkMaster      - getMaxTime()         ~*~ Signal  : Maximum seconds to run is 111s with a HashSpeed of 15059 and 1679616 possibilities
+[2011-09-19 21:15:26] Controller      - getMaxTime()         ~*~ Signal  : Maximum run time is: 111s
+[2011-09-19 21:15:26] View            - setSliderMax()       ~*~ Signal  : Progressbar max = 111s
+[2011-09-19 21:15:26] Controller      - getMaxTimeAsDate()   ~*~ Signal  : Maximum run time:  1 minute 51 seconds
+[2011-09-19 21:15:26] Controller      - fetchBenches()       ~*~ Signal  : Benchmark results found
+[2011-09-19 21:15:26] Controller      - runWork()            ~*~ Signal  : Running work
+[2011-09-19 21:15:26] WorkMaster      - work()               ~*~ Signal  : deferring runBenches to * thread
+[2011-09-19 21:15:26] WorkMaster      - runWork()            ~*~ Signal  : Starting work on 1 nodes
+[2011-09-19 21:15:26] LocalNode       - guessPasswords()     ~*~ Signal  : Starting subprocesses enabling parallelism
+[2011-09-19 21:15:27] LocalNode       - catchResult()        ~*~ Signal  : Result found: {'1': 'C2265B23734E0DACAAD3B435B51404EE'}
+[2011-09-19 21:15:27] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Results'...
+[2011-09-19 21:15:27] WorkMaster      - update()             ~*~ Signal  : The local node returned these passwords: "{'1': 'C2265B23734E0DACAAD3B435B51404EE'}"
+[2011-09-19 21:15:27] WorkMaster      - addResult()          ~*~ Signal  : Added result {'1': 'C22...
+[2011-09-19 21:15:27] LocalNode       - catchResult()        ~*~ Signal  : Result found: {'11': '5D3872C04445E010AAD3B435B51404EE'}
+[2011-09-19 21:15:27] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Results'...
+[2011-09-19 21:15:27] WorkMaster      - update()             ~*~ Signal  : The local node returned these passwords: "{'11': '5D3872C04445E010AAD3B435B51404EE'}"
+[2011-09-19 21:15:27] WorkMaster      - addResult()          ~*~ Signal  : Added result {'11': '5D...
+[2011-09-19 21:15:27] LocalNode       - catchResult()        ~*~ Signal  : Result found: {'111': '6BA2730853FC2C19AAD3B435B51404EE'}
+[2011-09-19 21:15:27] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Results'...
+[2011-09-19 21:15:27] WorkMaster      - update()             ~*~ Signal  : The local node returned these passwords: "{'111': '6BA2730853FC2C19AAD3B435B51404EE'}"
+[2011-09-19 21:15:27] WorkMaster      - addResult()          ~*~ Signal  : Added result {'111': '6...
+[2011-09-19 21:15:28] View            - showResults()        ~*~ Signal  : Received results {'1': 'C2265B23734E0DACAAD3B435B51404EE'}...
+[2011-09-19 21:15:28] Controller      - workCallback()       ~*~ Signal  : Added results
+[2011-09-19 21:15:28] Controller      - fetchResults()       ~*~ Signal  : Password results found
+[2011-09-19 21:15:29] View            - showResults()        ~*~ Signal  : Received results {'11': '5D3872C04445E010AAD3B435B51404EE'}...
+[2011-09-19 21:15:29] Controller      - workCallback()       ~*~ Signal  : Added results
+[2011-09-19 21:15:29] Controller      - fetchResults()       ~*~ Signal  : Password results found
+[2011-09-19 21:15:30] View            - showResults()        ~*~ Signal  : Received results {'111': '6BA2730853FC2C19AAD3B435B51404EE'}...
+[2011-09-19 21:15:30] Controller      - workCallback()       ~*~ Signal  : Added results
+[2011-09-19 21:15:30] Controller      - fetchResults()       ~*~ Signal  : Password results found
+[2011-09-19 21:15:31] LocalNode       - catchResult()        ~*~ Signal  : Result found: {'1111': '6D9DD43D64B5222AAAD3B435B51404EE'}
+[2011-09-19 21:15:31] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Results'...
+[2011-09-19 21:15:31] WorkMaster      - update()             ~*~ Signal  : The local node returned these passwords: "{'1111': '6D9DD43D64B5222AAAD3B435B51404EE'}"
+[2011-09-19 21:15:31] WorkMaster      - addResult()          ~*~ Signal  : Added result {'1111': '...
+[2011-09-19 21:15:32] View            - showResults()        ~*~ Signal  : Received results {'1111': '6D9DD43D64B5222AAAD3B435B51404EE'}...
+[2011-09-19 21:15:32] Controller      - workCallback()       ~*~ Signal  : Added results
+[2011-09-19 21:15:32] Controller      - fetchResults()       ~*~ Signal  : Password results found
+[2011-09-19 21:16:24] LocalNode       - catchResult()        ~*~ Signal  : Result found: {'ZZZZ': 'CE045FF77F9D89E2AAD3B435B51404EE'}
+[2011-09-19 21:16:24] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Results'...
+[2011-09-19 21:16:24] WorkMaster      - update()             ~*~ Signal  : The local node returned these passwords: "{'ZZZZ': 'CE045FF77F9D89E2AAD3B435B51404EE'}"
+[2011-09-19 21:16:24] WorkMaster      - addResult()          ~*~ Signal  : Added result {'ZZZZ': '...
+[2011-09-19 21:16:25] View            - showResults()        ~*~ Signal  : Received results {'ZZZZ': 'CE045FF77F9D89E2AAD3B435B51404EE'}...
+[2011-09-19 21:16:25] Controller      - workCallback()       ~*~ Signal  : Added results
+[2011-09-19 21:16:25] Controller      - fetchResults()       ~*~ Signal  : Password results found
+[2011-09-19 21:16:25] LocalNode       - fetchResults()       ~*~ Signal  : Work completed
+[2011-09-19 21:16:25] WorkMaster      - update()             ~*~ Signal  : Received an update: ['Work', '...
+[2011-09-19 21:16:25] WorkMaster      - update()             ~*~ Signal  : Finished working
+[2011-09-19 21:16:25] Controller      - update()             ~*~ Signal  : Controller was updated: Work:Done...
+[2011-09-19 21:16:25] Controller      - update()             ~*~ Signal  : Finished working
+[2011-09-19 21:21:12] LocalNode       - stopWork()           ~*~ Signal  : Stopped work processes
+[2011-09-19 21:21:12] Controller      - stop()               ~*~ Signal  : Shutting down program
+
+
+
+
+name                                 #n       tsub       ttot       tavg
+..internet/defer.py._runCallbacks:46 108004   0.447184   1.064242   0.000010   
+../internet/posixbase.py.<lambda>:13 72342    0.021652   0.021652   0.000000   
+../base.py._insertNewDelayedCalls:73 72332    0.089890   0.150885   0.000002   
+../internet/defer.py.addCallbacks:27 72001    0.154184   1.138073   0.000016   
+..sted/internet/base.py.callLater:68 36260    0.151265   0.233597   0.000006   
+..internet/base.py.activate_delay:14 36260    0.029223   0.029223   0.000001   
+..wisted/internet/base.py.__init__:4 36260    0.063254   0.063254   0.000002   
+..ternet/selectreactor.py.doSelect:9 36166    0.141582   355.4480.. 0.009828   
+..nternet/base.py.runUntilCurrent:75 36166    0.203835   6.727120   0.000186   
+..wisted/internet/base.py.timeout:74 36166    0.060158   0.216026   0.000006   
+..sted/internet/defer.py.__init__:24 36004    0.030736   0.030736   0.000001   
+..sted/internet/defer.py.callback:34 36003    0.036619   0.210862   0.000006   
+..net/defer.py._startRunCallbacks:43 36003    0.047806   0.160890   0.000004   
+..d/internet/defer.py.addCallback:29 36001    0.038890   0.867003   0.000024   
+..wisted/internet/defer.py.succeed:5 36000    0.067650   0.309216   0.000009   
+..sted/internet/defer.py.passthru:15 36000    0.007254   0.007254   0.000000   
+..ed/internet/task.py._reschedule:19 36000    0.136736   0.398834   0.000011   
+..ed/internet/defer.py.addErrback:30 36000    0.034971   0.344931   0.000010   
+..isted/internet/task.py.__call__:18 35999    0.134321   6.433730   0.000179   
+..hon2.7/lib-tk/Tkinter.py.update:91 35999    0.093578   4.611052   0.000128   
+..internet/defer.py.maybeDeferred:11 35999    0.112653   5.089328   0.000141   
+..ges/twisted/internet/task.py.cb:18 35999    0.037851   0.436665   0.000012   
+..sr/lib/python2.7/socket.py.meth:22 35328    0.036294   0.051709   0.000001   
+..twisted/internet/base.py.__lt__:16 31634    0.011364   0.011364   0.000000   
+..n2.7/lib-tk/Tkinter.py._cnfmerge:7 179      0.000248   0.000396   0.000002   
+..python2.7/lib-tk/Tkinter.py.set:20 139      0.000231   0.003147   0.000023   
+..multiprocessing/queues.py.empty:14 137      0.000137   0.001676   0.000012   
+..multiprocessing/forking.py.poll:13 128      0.000238   0.001146   0.000009   
+..2.7/lib-tk/Tkinter.py._options:104 125      0.000359   0.000881   0.000007   
+..iprocessing/process.py.is_alive:14 124      0.000432   0.001033   0.000008   
+..odel/model/logger.py.__getattr__:9 82       0.000063   0.000100   0.000001   
+..covery/model/model/logger.py.log:6 82       0.001265   0.001994   0.000024   
+..del/controller.py.secondsToTime:28 68       0.000727   0.000727   0.000011   
+..python2.7/lib-tk/Tkinter.py.set:27 68       0.000144   0.000689   0.000010   
+..l/model/node.py.manageProcesses:19 66       0.000000   0.004167   0.000063   
+../model/model/view.py.updateTime:42 65       0.000227   0.002800   0.000043   
+../model/controller.py.updateTime:25 65       0.000317   0.003819   0.000059   
+..el/model/controller.py.interval:21 65       0.000259   0.006481   0.000100   
+..l/model/controller.py.increment:24 65       0.000252   0.005656   0.000087   
+..odel/model/node.py.fetchResults:22 64       0.000333   0.009499   0.000148   
+..model/view.py.incrementProgress:43 64       0.000403   0.001505   0.000024   
+..thon2.7/lib-tk/Tkinter.py.cget:120 64       0.000125   0.000447   0.000007   
+..controller.py.incrementProgress:25 64       0.000080   0.001585   0.000025   
+...7/multiprocessing/util.py.debug:7 61       0.000020   0.000020   0.000000   
+..odel/controller.py.fetchResults:19 61       0.000233   0.002686   0.000044   
+..2.7/lib-tk/Tkinter.py.__init__:196 58       0.000358   0.012707   0.000219   
+..b-tk/Tkinter.py.pack_configure:179 58       0.000116   0.000796   0.000014   
+..on2.7/lib-tk/Tkinter.py._setup:193 58       0.000371   0.000411   0.000007   
+..thon2.7/lib-tk/ttk.py._load_tile:3 56       0.000011   0.000011   0.000000   
+..n2.7/lib-tk/ttk.py.setup_master:35 56       0.000011   0.000011   0.000000   
+..ython2.7/lib-tk/ttk.py.__init__:53 56       0.000215   0.011523   0.000206   
+..b/python2.7/weakref.py.__init__:22 49       0.000066   0.000066   0.000001   
+..python2.7/weakref.py.__setitem__:7 49       0.000118   0.000255   0.000005   
+..ing/util.py.register_after_fork:15 49       0.000147   0.000410   0.000008   
+..ib/python2.7/weakref.py.__new__:22 49       0.000041   0.000071   0.000001   
+..ing/synchronize.py._make_methods:8 42       0.000041   0.000041   0.000001   
+..ocessing/synchronize.py.__init__:7 42       0.001349   0.001770   0.000042   
+..lib/python2.7/threading.py._note:6 34       0.000019   0.000019   0.000001   
+../python2.7/threading.py.__init__:5 34       0.000021   0.000021   0.000001   
+..y/model/model/controller.py.log:35 31       0.000096   0.000922   0.000030   
+..y/model/model/workMaster.py.log:38 28       0.000087   0.000584   0.000021   
+..ython2.7/threading.py._is_owned:22 26       0.000031   0.000049   0.000002   
+..ython2.7/threading.py.Condition:18 22       0.000051   0.000268   0.000012   
+..python2.7/threading.py.__init__:18 22       0.000204   0.000217   0.000010   
+..sr/lib/python2.7/ast.py._convert:5 21       0.000000   0.000000   0.000000   
+..python/context.py.currentContext:6 20       0.000037   0.000038   0.000002   
+..cessing/synchronize.py.__init__:14 19       0.000042   0.000959   0.000050   
+..cessing/synchronize.py.__init__:11 16       0.000019   0.000613   0.000038   
+..ython2.7/lib-tk/ttk.py.__init__:76 15       0.000018   0.001097   0.000073   
+...7/lib-tk/Tkinter.py._register:108 14       0.000091   0.000136   0.000010   
+../lib/python2.7/weakref.py.remove:4 14       0.000034   0.000034   0.000002   
+..ecovery/model/model/node.py.log:26 14       0.000086   0.000601   0.000043   
+..2.7/lib-tk/Tkinter.py.__init__:140 14       0.000006   0.000006   0.000000   
+..b/python2.7/threading.py.notify:27 14       0.000051   0.000104   0.000007   
+..r/lib/python2.7/ast.py.<genexpr>:6 14       0.000015   0.000025   0.000002   
+..ython2.7/lib-tk/ttk.py.__init__:75 13       0.000023   0.000517   0.000040   
+..del/model/logger.py.__setattr__:10 12       0.000014   0.000019   0.000002   
+..lib/python2.7/threading.py.wait:23 12       403.9222.. 403.9301.. 33.660843  
+..ython2.7/lib-tk/ttk.py.<genexpr>:7 12       0.000021   0.000021   0.000002   
+..n2.7/threading.py._release_save:22 12       0.000006   0.000010   0.000001   
+..7/multiprocessing/queues.py.get:11 12       0.000374   3.098392   0.258199   
+..y/model/model/logger.py.__init__:8 12       0.000041   0.000185   0.000015   
+..el/observable.py.notifyObservers:2 11       0.000000   0.008853   0.000805   
+..ted/python/context.py.getContext:4 11       0.000025   0.000036   0.000003   
+..ted/python/context.py.getContext:6 11       0.000035   0.000097   0.000009   
+..ython2.7/lib-tk/ttk.py.__init__:60 11       0.000016   0.005590   0.000508   
+..ib/python2.7/threading.py.isSet:38 10       0.000002   0.000002   0.000000   
+..ython2.7/lib-tk/ttk.py.__init__:65 9        0.000012   0.002764   0.000307   
+../lib-tk/Tkinter.py.__getattr__:176 9        0.000010   0.000013   0.000001   
+..7/lib-tk/Tkinter.py._configure:118 9        0.000039   0.000202   0.000022   
+...7/lib-tk/Tkinter.py.configure:119 9        0.000010   0.000212   0.000024   
+..7/threading.py._acquire_restore:22 9        0.000011   0.000041   0.000005   
+..n2.7/threading.py.currentThread:82 8        0.000018   0.000023   0.000003   
+..processing/process.py.<genexpr>:10 8        0.000003   0.000003   0.000000   
+..ython/context.py.callWithContext:5 8        0.000017   0.002917   0.000365   
+..ython/context.py.callWithContext:3 8        0.000000   0.002889   0.000361   
+..odel/model/workMaster.py.update:35 7        0.000078   0.008627   0.001232   
+..cessing/synchronize.py.__init__:12 7        0.000011   0.000270   0.000039   
+..processing/queues.py._after_fork:8 7        0.000045   0.000144   0.000021   
+..tiprocessing/connection.py.Pipe:18 7        0.000040   0.000629   0.000090   
+..ython2.7/lib-tk/ttk.py.__init__:78 7        0.000013   0.001557   0.000222   
+..ultiprocessing/__init__.py.Pipe:10 7        0.000185   0.001657   0.000237   
+..ltiprocessing/__init__.py.Queue:21 7        0.000195   0.003141   0.000449   
+/usr/lib/python2.7/ast.py.parse:32   7        0.000006   0.000238   0.000034   
+..ltiprocessing/queues.py.__init__:5 7        0.000073   0.002814   0.000402   
+...7/multiprocessing/queues.py.put:9 7        0.000053   0.007775   0.001111   
+..ib/python2.7/ast.py.literal_eval:4 7        0.000157   0.000398   0.000057   
+..ecovery/model/model/view.py.log:49 7        0.000035   0.000241   0.000034   
+..ed/python/log.py.callWithContext:6 6        0.000069   0.002907   0.000484   
+..python2.7/threading.py.__init__:37 6        0.000025   0.000125   0.000021   
+..b/python2.7/threading.py.daemon:70 6        0.000011   0.000011   0.000002   
+..ib/python2.7/threading.py.start:48 6        0.000096   0.008705   0.001451   
+..python2.7/threading.py.__init__:43 6        0.000073   0.000337   0.000056   
+..odel/controller.py.fetchBenches:15 6        0.000037   0.001114   0.000186   
+../twisted/python/reflect.py.qual:29 6        0.000011   0.000011   0.000002   
+../lib/python2.7/threading.py.run:50 6        0.000132   353.1123.. 58.852066  
+..hon2.7/threading.py._set_daemon:46 6        0.000024   0.000055   0.000009   
+..lib/python2.7/threading.py.wait:40 6        0.000023   0.008424   0.001404   
+..ted/python/log.py.callWithLogger:7 6        0.000040   0.002958   0.000493   
+..ib/python2.7/threading.py.Event:36 6        0.000016   0.000141   0.000023   
+..kages/twisted/python/log.py.msg:26 5        0.000039   0.000067   0.000013   
+../internet/posixbase.py.<lambda>:14 5        0.000001   0.000001   0.000000   
+..model/model/view.py.showResults:47 5        0.000067   0.000502   0.000100   
+..ython2.7/lib-tk/Tkinter.py.get:239 5        0.000004   0.000020   0.000004   
+..ython2.7/lib-tk/Tkinter.py.see:253 5        0.000008   0.000023   0.000005   
+..rnet/process.py.reapAllProcesses:4 5        0.000018   0.000020   0.000004   
+..l/model/workMaster.py.addResult:34 5        0.000043   0.007763   0.001553   
+..on2.7/lib-tk/Tkinter.py.insert:251 5        0.000011   0.000181   0.000036   
+..very/model/model/hash.py.__init__: 5        0.000709   0.001481   0.000296   
+..selectreactor.py._doReadOrWrite:14 5        0.000020   0.002544   0.000509   
+..model/model/node.py.catchResult:24 5        0.000082   0.008457   0.001691   
+..ted/internet/fdesc.py.readFromFD:6 5        0.000021   0.002383   0.000477   
+..ed/internet/posixbase.py.doRead:13 5        0.000056   0.002440   0.000488   
+..odel/controller.py.workCallback:20 5        0.000024   0.000633   0.000127   
+..l/model/controller.py.awaitWork:18 5        0.000014   0.001370   0.000274   
+..twisted/python/log.py.logPrefix:22 5        0.000002   0.000002   0.000000   
+..thon/reflect.py.accumulateBases:59 5        0.000000   0.000000   0.000000   
+..ges/twisted/python/log.py._emit:63 5        0.000002   0.000002   0.000000   
+..r/lib/python2.7/Queue.py._qsize:20 5        0.000003   0.000005   0.000001   
+..tiprocessing/process.py._cleanup:7 4        0.000156   0.000753   0.000188   
+..on2.7/lib-tk/Tkinter.py.__str__:19 4        0.000001   0.000001   0.000000   
+..del/model/observable.py.__init__:1 4        0.000004   0.000004   0.000001   
+..n2.7/lib-tk/Tkinter.py.__init__:17 4        0.000012   0.000047   0.000012   
+..cessing/synchronize.py.__init__:19 4        0.000019   0.000498   0.000124   
+..cessing/synchronize.py.__init__:30 4        0.000025   0.000901   0.000225   
+..very/model/model/task.py.__init__: 4        0.000033   0.001032   0.000258   
+../lib/python2.7/posixpath.py.join:6 4        0.000009   0.000012   0.000003   
+..ltiprocessing/__init__.py.Event:20 4        0.000030   0.000931   0.000233   
+..on2.7/lib-tk/Tkinter.py.insert:240 4        0.000006   0.000141   0.000035   
+..ultiprocessing/process.py.start:11 4        0.000582   0.004747   0.001187   
+..ed/internet/posixbase.py.doRead:21 4        0.000060   0.002491   0.000623   
+..ed/internet/_signals.py.__call__:7 4        0.000013   0.000013   0.000003   
+..2.7/lib-tk/Tkinter.py.__call__:140 4        0.000017   1.016798   0.254199   
+..ng/synchronize.py._make_methods:22 4        0.000014   0.000014   0.000003   
+..tiprocessing/process.py.__init__:9 4        0.000049   0.000068   0.000017   
+../python2.7/genericpath.py.isfile:2 4        0.000014   0.000037   0.000009   
+..iprocessing/forking.py.__init__:11 4        0.000339   0.003396   0.000849   
+..ultiprocessing/util.py.__init__:17 3        0.000040   0.000040   0.000013   
+..n2.7/lib-tk/Tkinter.py.__init__:24 3        0.000004   0.000038   0.000013   
+..l/observable.py.registerObserver:1 3        0.000000   0.000003   0.000001   
+../model/hash.py.getPossibleHashes:4 3        0.000000   0.000000   0.000000   
+..nternet/fdesc.py._setCloseOnExec:4 3        0.000005   0.000019   0.000006   
+..ython2.7/threading.py.notifyAll:29 3        0.000004   0.000018   0.000006   
+..b/python2.7/threading.py.__stop:60 3        0.000035   0.000054   0.000018   
+..odel/model/controller.py.update:37 3        0.000016   0.000318   0.000106   
+..multiprocessing/queues.py._feed:23 3        0.000000   0.000000   0.000000   
+../lib-tk/Tkinter.py.__setitem__:121 3        0.000003   0.000078   0.000026   
+..el/model/workRange.py.divideMore:5 3        0.000049   0.000077   0.000026   
+..model/model/workRange.py.__init__: 3        0.000002   0.000002   0.000001   
+..b/python2.7/threading.py.daemon:70 3        0.000006   0.000006   0.000002   
+..del/model/view.py.disableButton:41 3        0.000010   0.000076   0.000025   
+..cessing/queues.py._start_thread:17 3        0.000111   0.007657   0.002552   
+..controller.py.getPossibleHashes:13 2        0.000011   0.001466   0.000733   
+../model/workMaster.py.getMaxTime:26 2        0.000019   0.000061   0.000030   
+..lib/python2.7/timeit.py.reindent:9 2        0.000003   0.000003   0.000002   
+../lib-tk/Tkinter.py.pack_forget:181 2        0.000004   0.000036   0.000018   
+/usr/lib/python2.7/Queue.py.get:150  2        0.000019   346.9105.. 173.4552.. 
+..ery/model/model/node.py.__init__:2 2        0.000004   0.000005   0.000002   
+..python2.7/lib-tk/ttk.py.current:73 2        0.000002   0.000012   0.000006   
+..ython2.7/lib-tk/ttk.py.__init__:69 2        0.000008   0.000201   0.000100   
+..charsetGenerators.py.excludeLower: 2        0.000022   0.000032   0.000016   
+..rnet/selectreactor.py.addReader:15 2        0.000002   0.000002   0.000001   
+../threadpool.py._startSomeWorkers:9 2        0.000010   0.000618   0.000309   
+..sted/internet/defer.py.__init__:72 2        0.000018   0.000039   0.000019   
+..sr/lib/python2.7/Queue.py.qsize:86 2        0.000003   0.000009   0.000005   
+..rocessing/__init__.py.cpu_count:10 2        0.000006   0.000178   0.000089   
+..model/node.py.initializeManager:18 2        0.003192   0.005591   0.002795   
+..t/selectreactor.py.removeReader:17 2        0.000002   0.000002   0.000001   
+..nternet/base.py.fireSystemEvent:62 2        0.000012   0.001909   0.000954   
+..del/model/node.py.optimizeTasks:10 2        0.000013   0.000058   0.000029   
+..el/model/node.py.guessPasswords:11 2        0.000077   0.006906   0.003453   
+..ted/internet/base.py.addTrigger:32 2        0.000007   0.000010   0.000005   
+../model/controller.py.getMaxTime:26 2        0.000010   0.000106   0.000053   
+..odel/model/view.py.setSliderMax:44 2        0.000013   0.000106   0.000053   
+..hash.py.getPossibleHashFunctions:4 2        0.000006   0.000010   0.000005   
+..t/base.py.addSystemEventTrigger:63 2        0.000006   0.000016   0.000008   
+/usr/lib/python2.7/Queue.py.put:107  2        0.000013   0.000065   0.000032   
+..ery/model/model/node.py.__init__:5 2        0.000023   0.001154   0.000577   
+...7/lib-tk/ttk.py._format_optdict:5 2        0.000026   0.000071   0.000035   
+..internet/fdesc.py.setNonBlocking:2 2        0.000006   0.000021   0.000010   
+..sr/lib/python2.7/Queue.py._put:204 2        0.000004   0.000005   0.000002   
+../lib-tk/Tkinter.py.wm_protocol:162 2        0.000008   0.000111   0.000056   
+..overy/model/model/view.py.reset:43 2        0.000002   0.000026   0.000013   
+..sted/internet/base.py.fireEvent:39 2        0.000018   0.001897   0.000948   
+..python2.7/threading.py._newname:41 2        0.000008   0.000008   0.000004   
+..nternet/base.py._continueFiring:41 2        0.000029   0.001806   0.000903   
+..del/charsetGenerators.py.__init__: 2        0.000158   0.000252   0.000126   
+..sr/lib/python2.7/Queue.py._get:208 2        0.000003   0.000003   0.000002   
+../charsetGenerators.py.getCharset:1 2        0.000009   0.000024   0.000012   
+../controller.py.getMaxTimeAsDate:27 2        0.000012   0.000277   0.000139   
+../model/workMaster.py.divideWork:23 1        0.000014   0.000051   0.000051   
+..nternet/base.py._stopThreadPool:93 1        0.000022   0.000189   0.000189   
+..overy/model/model/network.py.log:5 1        0.000003   0.000019   0.000019   
+..thon2.7/lib-tk/Tkinter.py._bind:93 1        0.000005   0.000022   0.000022   
+..ool.py.callInThreadWithCallback:12 1        0.000005   0.000628   0.000628   
+..y/model/model/controller.py.main:3 1        0.000015   362.5636.. 362.5636.. 
+..model/model/idGenerator.py.getID:1 1        0.000006   0.000007   0.000007   
+..ery/model/model/view.py.callback:8 1        0.000017   0.009143   0.009143   
+..el/charsetGenerators.py.__init__:4 1        0.000004   0.000191   0.000191   
+../internet/tcp.py.startListening:84 1        0.000020   0.000215   0.000215   
+..ings/ascii.py.IncrementalEncoder:2 1        0.000001   0.000001   0.000001   
+..y/model/model/logger.py.__init__:5 1        0.000002   0.000115   0.000115   
+..et/tcp.py._logConnectionLostMsg:97 1        0.000005   0.000020   0.000020   
+..isted/python/threadpool.py.stop:23 1        0.000018   0.000158   0.000158   
+../encodings/ascii.py.StreamReader:3 1        0.000001   0.000001   0.000001   
+..net/tcp.py.createInternetSocket:84 1        0.000005   0.000073   0.000073   
+../lib-tk/Tkinter.py.readprofile:173 1        0.000075   0.000198   0.000198   
+..ed/python/threadpool.py.__init__:4 1        0.000004   0.000042   0.000042   
+..el/model/workMaster.py.stopWork:20 1        0.000006   1.001090   1.001090   
+..odel/controller.py.runBenchmark:13 1        0.000005   0.002387   0.002387   
+../internet/base.py.startRunning:112 1        0.000002   0.001338   0.001338   
+../model/workMaster.py.sumBenches:28 1        0.000004   0.000004   0.000004   
+..b/python2.7/tempfile.py.<module>:1 1        0.000027   0.000053   0.000053   
+..l/controller.py.setHashFunction:12 1        0.000005   0.000031   0.000031   
+..cessing/queues.py.JoinableQueue:29 1        0.000002   0.000002   0.000002   
+../lib-tk/Tkinter.py.wm_geometry:153 1        0.000001   0.000008   0.000008   
+..ry/model/model/view.py.workView:17 1        0.000226   0.007804   0.007804   
+..s/twisted/internet/base.py.run:115 1        0.000005   362.5064.. 362.5064.. 
+..del/model/workMaster.py.runWork:10 1        0.000006   0.000417   0.000417   
+..on/threadpool.py.ThreadSafeList:28 1        0.000007   0.000024   0.000024   
+..ings/ascii.py.IncrementalDecoder:2 1        0.000004   0.000004   0.000004   
+..el/model/workMaster.py.setLength:5 1        0.000002   0.000002   0.000002   
+../model/model/network.py.__init__:1 1        0.000004   0.000008   0.000008   
+..n2.7/lib-tk/Tkinter.py.__init__:26 1        0.000001   0.000014   0.000014   
+..l/model/workMaster.py.setToWork:16 1        0.000016   0.000393   0.000393   
+..net/base.py._reallyStartRunning:67 1        0.000001   0.000001   0.000001   
+..python/threadable.py.getThreadID:8 1        0.000002   0.000003   0.000003   
+..ocessing/connection.py.Listener:11 1        0.000003   0.000003   0.000003   
+..ed/python/deprecate.py.__init__:30 1        0.000003   0.000003   0.000003   
+../internet/endpoints.py.__init__:16 1        0.000003   0.000003   0.000003   
+..threadable.py.registerAsIOThread:9 1        0.000001   0.000004   0.000004   
+..wisted/internet/task.py.__init__:6 1        0.000006   0.000006   0.000006   
+../multiprocessing/queues.py.Queue:5 1        0.000005   0.000005   0.000005   
+..wisted/internet/defer.py.execute:9 1        0.000002   0.000241   0.000241   
+..nternet/base.py._handleSignals:110 1        0.000011   0.000016   0.000016   
+..ntroller.py.updateMaxTimeAsDate:23 1        0.000003   0.000138   0.000138   
+../python/threadpool.py.ThreadPool:2 1        0.000009   0.000009   0.000009   
+..model/workMaster.py.addLocalNode:7 1        0.000005   0.000289   0.000289   
+..on/threadpool.py.adjustPoolsize:25 1        0.000001   0.000012   0.000012   
+..l/model/workMaster.py.setCharset:6 1        0.000002   0.000002   0.000002   
+..ng/connection.py.SocketListener:24 1        0.000001   0.000001   0.000001   
+..ython/threadpool.py.startAWorker:7 1        0.000005   0.000598   0.000598   
+<timeit-src>.inner:2                 1        0.000015   3.098065   3.098065   
+<timeit-src>.<module>:2              1        0.000003   0.000003   0.000003   
+..nternet/threads.py.deferToThread:5 1        0.000011   0.000949   0.000949   
+../lib/python2.7/timeit.py.repeat:19 1        0.000009   3.098093   3.098093   
+..ted/internet/tcp.py._closeSocket:8 1        0.000013   0.000060   0.000060   
+..ings/__init__.py.search_function:7 1        0.000016   0.000210   0.000210   
+..sted/python/versions.py.__init__:4 1        0.000002   0.000002   0.000002   
+..workMaster.py.fetchBenchResults:14 1        0.000013   3.098541   3.098541   
+../twisted/internet/task.py.start:13 1        0.000011   0.000033   0.000033   
+..sted/internet/protocol.py.doStop:4 1        0.000015   0.000024   0.000024   
+..rnet/abstract.py.connectionLost:14 1        0.000007   0.000013   0.000013   
+..ed/internet/_signals.py.__init__:7 1        0.000001   0.000001   0.000001   
+..ib/python2.7/socket.py.__init__:18 1        0.000018   0.000034   0.000034   
+..del/model/observable.py.__init__:2 1        0.000001   0.000002   0.000002   
+..-x86_64.egg/yappi.py.print_stats:5 1        0.000000   0.000000   0.000000   
+..lib/python2.7/inspect.py.isclass:5 1        0.000006   0.000006   0.000006   
+..del/controller.py.benchCallback:16 1        0.000012   0.000453   0.000453   
+..eprecate.py._deprecateAttribute:33 1        0.000003   0.000006   0.000006   
+..codings/ascii.py.StreamConverter:3 1        0.000000   0.000000   0.000000   
+..d/python/util.py.untilConcludes:75 1        0.000002   0.000129   0.000129   
+..nternet/abstract.py.stopReading:34 1        0.000003   0.000004   0.000004   
+..s/twisted/internet/base.py.stop:56 1        0.000003   0.000003   0.000003   
+../internet/base.py.getThreadPool:94 1        0.000002   0.000305   0.000305   
+..2.7/lib-tk/Tkinter.py.wm_title:164 1        0.000002   0.000006   0.000006   
+..ed/internet/tksupport.py.install:3 1        0.000009   0.000061   0.000061   
+../internet/base.py.disconnectAll:60 1        0.000024   0.000306   0.000306   
+..nternet/posixbase.py._removeAll:47 1        0.000019   0.000020   0.000020   
+../internet/base.py.removeTrigger:34 1        0.000001   0.000006   0.000006   
+../lib/python2.7/codecs.py.__new__:7 1        0.000004   0.000005   0.000005   
+..d/internet/posixbase.py.install:19 1        0.000003   0.000026   0.000026   
+..ted/internet/protocol.py.doStart:3 1        0.000006   0.000015   0.000015   
+..model/workMaster.py.setPasswords:5 1        0.000001   0.000001   0.000001   
+..del/model/controller.py.runWork:17 1        0.000007   0.002419   0.002419   
+..ultiprocessing/__init__.py.Lock:16 1        0.000008   0.000113   0.000113   
+..ed/python/threadpool.py._worker:19 1        3.098592   350.0092.. 350.0092.. 
+..n/deprecate.py.__getattribute__:26 1        0.000003   0.000004   0.000004   
+..rocessing/queues.py.SimpleQueue:35 1        0.000005   0.000005   0.000005   
+..ed/internet/posixbase.py.wakeUp:16 1        0.000010   0.000139   0.000139   
+..del/model/network.py.checkServer:3 1        0.000001   0.000001   0.000001   
+..nternet/protocol.py.startFactory:6 1        0.000001   0.000001   0.000001   
+..sted/internet/tcp.py.logPrefix:100 1        0.000006   0.000009   0.000009   
+..rocessing/connection.py.<module>:3 1        0.000786   0.000843   0.000843   
+../python2.7/posixpath.py.splitext:9 1        0.000002   0.000004   0.000004   
+..y._installHandlerUsingSetWakeup:11 1        0.000005   0.000023   0.000023   
+..ed/python/threadpool.py.<module>:1 1        0.000060   0.000093   0.000093   
+..mpfile.py._TemporaryFileWrapper:35 1        0.000006   0.000006   0.000006   
+..del/model/network.py.setupServer:1 1        0.000014   0.000344   0.000344   
+../internet/posixbase.py.__init__:19 1        0.001143   0.001189   0.001189   
+../internet/posixbase.py.__init__:12 1        0.000009   0.000046   0.000046   
+..ython2.7/lib-tk/Tkinter.py.get:296 1        0.000001   0.000029   0.000029   
+..l/controller.py.determineCharset:9 1        0.000007   0.000247   0.000247   
+..connection.py.ConnectionWrapper:42 1        0.000000   0.000000   0.000000   
+/usr/lib/python2.7/copy.py.copy:66   1        0.000002   0.000004   0.000004   
+..odel/network.py.registerObserver:4 1        0.000005   0.000006   0.000006   
+..ry/model/model/node.py.benchmark:8 1        3.094126   3.097172   3.097172   
+..model/view.py.showMaxTimeAsDate:46 1        0.000001   0.000021   0.000021   
+..rnet/base.py.removeTrigger_BASE:35 1        0.000002   0.000004   0.000004   
+../model/workMaster.py.runBenches:12 1        0.000015   0.001686   0.001686   
+..python2.7/posixpath.py.basename:11 1        0.000003   0.000004   0.000004   
+..nternet/abstract.py.stopWriting:35 1        0.000002   0.000002   0.000002   
+../encodings/ascii.py.StreamWriter:2 1        0.000000   0.000000   0.000000   
+..model/model/controller.py.getIP:31 1        0.000005   0.000154   0.000154   
+..el/model/workMaster.py.addBench:33 1        0.000018   0.000442   0.000442   
+..ted/internet/threads.py.onResult:4 1        0.000004   0.000156   0.000156   
+..ssing/connection.py.XmlListener:44 1        0.000000   0.000000   0.000000   
+..del/model/idGenerator.py.__init__: 1        0.000002   0.000002   0.000002   
+../tksupport.py.installTkFunctions:5 1        0.000013   0.000013   0.000013   
+..model/model/node.py.runBenchmark:6 1        0.000035   3.099065   3.099065   
+..empfile.py.SpooledTemporaryFile:48 1        0.000013   0.000013   0.000013   
+..del/workMaster.py.setBenchLength:5 1        0.000001   0.000001   0.000001   
+..ontroller.py.updateBenchResults:17 1        0.000013   0.000395   0.000395   
+..sted/internet/base.py.mainLoop:116 1        0.113909   362.5050.. 362.5050.. 
+..s/__init__.py.normalize_encoding:4 1        0.000004   0.000008   0.000008   
+..t/base.py.createInternetSocket:107 1        0.000009   0.000061   0.000061   
+../model/controller.py.setupServer:3 1        0.000009   0.001317   0.001317   
+..model/controller.py.setPasswords:5 1        0.000015   0.000274   0.000274   
+..lib/python2.7/threading.py.join:64 1        0.000082   0.000086   0.000086   
+..del/model/workMaster.py.__init__:2 1        0.000030   0.000665   0.000665   
+..ed/python/deprecate.py.__init__:24 1        0.000003   0.000003   0.000003   
+..wisted/internet/tcp.py.__init__:82 1        0.000007   0.000010   0.000010   
+..d/python/reflect.py.allYourBase:58 1        0.000014   0.000014   0.000014   
+..l/model/workMaster.py.normalize:20 1        0.000017   0.000026   0.000026   
+..internet/base.py.callFromThread:90 1        0.000007   0.000152   0.000152   
+..ltiprocessing/queues.py.<module>:3 1        0.000120   0.000132   0.000132   
+..el/model/controller.py.setLength:7 1        0.000005   0.000025   0.000025   
+..ux-x86_64.egg/yappi.py.get_stats:5 1        0.000000   0.000000   0.000000   
+../copy.py._copy_with_constructor:11 1        0.000001   0.000001   0.000001   
+../model/workMaster.py.setupServer:8 1        0.000003   0.000353   0.000353   
+..del/controller.py.setParameters:32 1        0.000009   0.000641   0.000641   
+..ed/internet/endpoints.py.listen:17 1        0.000004   0.000245   0.000245   
+..ython2.7/lib-tk/Tkinter.py.bind:94 1        0.000002   0.000024   0.000024   
+..et/base.py._reallyStartRunning:114 1        0.000005   0.001258   0.001258   
+..nternet/base.py._initThreadPool:91 1        0.000142   0.000303   0.000303   
+..ython2.7/UserDict.py.__getitem__:1 1        0.000001   0.000001   0.000001   
+../lib/python2.7/Queue.py.__init__:2 1        0.000006   0.000038   0.000038   
+..isted/python/context.py.__init__:2 1        0.000001   0.000001   0.000001   
+..y/model/model/view.py.callback3:38 1        0.000033   0.003191   0.003191   
+..te.py.deprecatedModuleAttribute:35 1        0.000005   0.000015   0.000015   
+..el/charsetGenerators.py.__init__:3 1        0.000031   0.000171   0.000171   
+..net/threads.py.deferToThreadPool:1 1        0.000004   0.000633   0.000633   
+..model/workMaster.py.runBenchmark:9 1        0.000003   0.001707   0.001707   
+..el/model/controller.py.addBench:37 1        0.000004   0.000211   0.000211   
+..thon2.7/genericpath.py._splitext:8 1        0.000001   0.000002   0.000002   
+..ypto/Cipher/__init__.py.<module>:4 1        0.000001   0.000001   0.000001   
+..y/model/model/view.py.serverView:5 1        0.000058   0.003303   0.003303   
+..el/charsetGenerators.py.__init__:5 1        0.000003   0.000187   0.000187   
+..2.7/lib-tk/Tkinter.py.__init__:280 1        0.000002   0.001352   0.001352   
+..d/internet/abstract.py.__init__:13 1        0.000003   0.000003   0.000003   
+..7/encodings/ascii.py.getregentry:4 1        0.000006   0.000011   0.000011   
+..thon2.7/lib-tk/ttk.py.__init__:102 1        0.000001   0.000081   0.000081   
+..el/workMaster.py.setHashFunction:6 1        0.000003   0.000007   0.000007   
+..rnet/selectreactor.py.removeAll:18 1        0.000003   0.000023   0.000023   
+..l/model/controller.py.setCharset:8 1        0.000005   0.000281   0.000281   
+..internet/posixbase.py.listenTCP:41 1        0.000004   0.000229   0.000229   
+<string>.<module>:1                  1        0.000072   0.000072   0.000072   
+..ages/Crypto/__init__.py.<module>:3 1        0.000001   0.000001   0.000001   
+..net/posixbase.py._handleSignals:27 1        0.000014   0.001252   0.001252   
+..model/model/TwistedServer.py.log:5 1        0.000003   0.000037   0.000037   
+..internet/protocol.py.stopFactory:7 1        0.000000   0.000000   0.000000   
+..del/model/view.py.showHashSpeed:47 1        0.000007   0.000244   0.000244   
+..ase.py.removeSystemEventTrigger:64 1        0.000002   0.000008   0.000008   
+../model/TwistedServer.py.__init__:4 1        0.000008   0.000049   0.000049   
+..d/internet/base.py.startRunning:65 1        0.000007   0.001336   0.001336   
+..t/selectreactor.py.removeWriter:17 1        0.000000   0.000000   0.000000   
+..isted/python/threadpool.py.start:6 1        0.000001   0.000013   0.000013   
+../internet/tcp.py.connectionLost:98 1        0.000028   0.000145   0.000145   
+..2.7/lib-tk/Tkinter.py.__init__:248 1        0.000002   0.000171   0.000171   
+..del/controller.py.setBenchLength:7 1        0.000003   0.000021   0.000021   
+..on2.7/encodings/ascii.py.<module>: 1        0.000070   0.000078   0.000078   
+..el/charsetGenerators.py.__init__:4 1        0.000029   0.000168   0.000168   
+..tempfile.py._RandomNameSequence:10 1        0.000002   0.000002   0.000002   
+..twisted/internet/base.py.wakeUp:50 1        0.000005   0.000144   0.000144   
+..ery/model/model/view.py.__init__:1 1        0.000013   0.051961   0.051961   
+..r/lib/python2.7/socket.py.close:19 1        0.000011   0.000021   0.000021   
+..y/model/model/view.py.optionView:2 1        0.000036   362.5116.. 362.5116.. 
+../lib/python2.7/timeit.py.timeit:17 1        0.000019   3.098084   3.098084   
+..thon2.7/encodings/ascii.py.Codec:1 1        0.000002   0.000002   0.000002   
+..thon2.7/UserDict.py.__contains__:7 1        0.000001   0.000001   0.000001   
+..model/view.py.reactivateButtons:44 1        0.000017   0.000090   0.000090   
+..ternet/abstract.py.startReading:36 1        0.000002   0.000002   0.000002   
+..covery/model/model/view.py.stop:48 1        0.000004   1.001144   1.001144   
+..n2.7/lib-tk/Tkinter.py._loadtk:169 1        0.000035   0.000143   0.000143   
+..ry/model/model/lanman.py.<module>: 1        0.000749   0.000751   0.000751   
+../twisted/internet/base.py.crash:57 1        0.000007   0.000016   0.000016   
+..sted/python/failure.py.__init__:15 1        0.000034   0.000075   0.000075   
+..ry/model/model/node.py.stopWork:25 1        0.000021   1.001084   1.001084   
+..ib/python2.7/timeit.py.__init__:12 1        0.000012   0.000366   0.000366   
+..sr/lib/python2.7/Queue.py._init:19 1        0.000002   0.000002   0.000002   
+../model/model/controller.py.stop:34 1        0.000017   1.001140   1.001140   
+..nternet/base.py.callWhenRunning:64 1        0.000002   0.000015   0.000015   
+..del/model/controller.py.__init__:1 1        0.000012   0.001943   0.001943   
+..2.7/lib-tk/Tkinter.py.__init__:166 1        0.000029   0.051945   0.051945   
+
+
+name           tid    fname                                scnt     ttot
+Thread         1399.. ..lib/python2.7/threading.py._note:6 4        0.018973   
+Thread         1399.. ..lib/python2.7/threading.py._note:6 7        1053.127.. 
+_MainThread    1399.. ..ux-x86_64.egg/yappi.py.get_stats:5 21       1838.305.. 
+Thread         1399.. ..n2.7/threading.py._release_save:22 5        57.011460  
+Thread         1399.. ..n2.7/threading.py._release_save:22 2        0.000265   
+Thread         1399.. ..lib/python2.7/threading.py._note:6 7        15.515593  
+Thread         1399.. ..n2.7/threading.py._release_save:22 3        0.000130   
+
+
+status     tstart                     fcnt     tcnt     mem(bytes)
+running    Mon Sep 19 21:15:09 2011   517      7        180456   

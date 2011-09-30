@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>model.TwistedServer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="model-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="model-module.html">Package&nbsp;model</a> ::
+        Module&nbsp;TwistedServer
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="model.TwistedServer-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="model.TwistedServer-module.html">Module model.TwistedServer</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># To change this template, choose Tools | Templates</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"># and open the template in the editor.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-name">__author__</tt><tt class="py-op">=</tt><tt class="py-docstring">"Cameron"</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-name">__date__</tt> <tt class="py-op">=</tt><tt class="py-string">"$4-jul-2011 14:50:22$"</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module model.observable=model.observable-module.html"><a title="model.observable" class="py-name" href="#" onclick="return doclink('link-0', 'observable', 'link-0');">observable</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class model.observable.IObservableServer=model.observable.IObservableServer-class.html"><a title="model.observable.IObservableServer" class="py-name" href="#" onclick="return doclink('link-1', 'IObservableServer', 'link-1');">IObservableServer</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">internet</tt> <tt class="py-keyword">import</tt> <tt class="py-name">reactor</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">internet</tt><tt class="py-op">.</tt><tt class="py-name">endpoints</tt> <tt class="py-keyword">import</tt> <tt class="py-name">TCP4ServerEndpoint</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">internet</tt><tt class="py-op">.</tt><tt class="py-name">error</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ConnectionDone</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">internet</tt><tt class="py-op">.</tt><tt class="py-name">protocol</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ServerFactory</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">protocols</tt> <tt class="py-keyword">import</tt> <tt class="py-name">basic</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module model.logger=model.logger-module.html"><a title="model.logger" class="py-name" href="#" onclick="return doclink('link-2', 'logger', 'link-2');">logger</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class model.logger.Logger=model.logger.Logger-class.html"><a title="model.logger.Logger" class="py-name" href="#" onclick="return doclink('link-3', 'Logger', 'link-3');">Logger</a></tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt>
+<a name="ChatServer"></a><div id="ChatServer-def"><a name="L17"></a><tt class="py-lineno">17</tt> <a class="py-toggle" href="#" id="ChatServer-toggle" onclick="return toggle('ChatServer');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="model.TwistedServer.ChatServer-class.html">ChatServer</a><tt class="py-op">(</tt><tt class="py-base-class">basic</tt><tt class="py-op">.</tt><tt class="py-base-class">LineReceiver</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServer-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ChatServer-expanded"><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
+<a name="ChatServer.connectionMade"></a><div id="ChatServer.connectionMade-def"><a name="L19"></a><tt class="py-lineno">19</tt> <a class="py-toggle" href="#" id="ChatServer.connectionMade-toggle" onclick="return toggle('ChatServer.connectionMade');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServer-class.html#connectionMade">connectionMade</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServer.connectionMade-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServer.connectionMade-expanded"><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method model.TwistedServer.ChatServerFactory.getID()=model.TwistedServer.ChatServerFactory-class.html#getID,Method model.idGenerator.IDGenerator.getID()=model.idGenerator.IDGenerator-class.html#getID"><a title="model.TwistedServer.ChatServerFactory.getID
+model.idGenerator.IDGenerator.getID" class="py-name" href="#" onclick="return doclink('link-4', 'getID', 'link-4');">getID</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt class="py-name">clients</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method model.TwistedClient.ChatClientFactory.log()=model.TwistedClient.ChatClientFactory-class.html#log,Method model.TwistedServer.ChatServerFactory.log()=model.TwistedServer.ChatServerFactory-class.html#log,Method model.controller.Controller.log()=model.controller.Controller-class.html#log,Method model.hash.Hash.log()=model.hash.Hash-class.html#log,Method model.logger.Logger.__impl.log()=model.logger.Logger.__impl-class.html#log,Method model.network.ClientWrapper.log()=model.network.ClientWrapper-class.html#log,Method model.network.ServerWrapper.log()=model.network.ServerWrapper-class.html#log,Method model.node.LocalNode.log()=model.node.LocalNode-class.html#log,Method model.observer.ILogObserver.log()=model.observer.ILogObserver-class.html#log,Method model.view.ChoiceScreen.log()=model.view.ChoiceScreen-class.html#log,Method model.workMaster.WorkMaster.log()=model.workMaster.WorkMaster-class.html#log,Method model.workSlave.WorkSlave.log()=model.workSlave.WorkSlave-class.html#log"><a title="model.TwistedClient.ChatClientFactory.log
+model.TwistedServer.ChatServerFactory.log
+model.controller.Controller.log
+model.hash.Hash.log
+model.logger.Logger.__impl.log
+model.network.ClientWrapper.log
+model.network.ServerWrapper.log
+model.node.LocalNode.log
+model.observer.ILogObserver.log
+model.view.ChoiceScreen.log
+model.workMaster.WorkMaster.log
+model.workSlave.WorkSlave.log" class="py-name" href="#" onclick="return doclink('link-5', 'log', 'link-5');">log</a></tt><tt class="py-op">(</tt><tt class="py-string">'Signal'</tt><tt class="py-op">,</tt><tt class="py-string">'Client Connected'</tt><tt class="py-op">,</tt><tt class="py-string">'connectionMade'</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method model.TwistedClient.ChatClientFactory.sendMessage()=model.TwistedClient.ChatClientFactory-class.html#sendMessage,Method model.TwistedServer.ChatServerFactory.sendMessage()=model.TwistedServer.ChatServerFactory-class.html#sendMessage,Method model.network.ClientWrapper.sendMessage()=model.network.ClientWrapper-class.html#sendMessage,Method model.network.ServerWrapper.sendMessage()=model.network.ServerWrapper-class.html#sendMessage,Method model.observer.IObserverController.sendMessage()=model.observer.IObserverController-class.html#sendMessage,Method model.workMaster.WorkMaster.sendMessage()=model.workMaster.WorkMaster-class.html#sendMessage"><a title="model.TwistedClient.ChatClientFactory.sendMessage
+model.TwistedServer.ChatServerFactory.sendMessage
+model.network.ClientWrapper.sendMessage
+model.network.ServerWrapper.sendMessage
+model.observer.IObserverController.sendMessage
+model.workMaster.WorkMaster.sendMessage" class="py-name" href="#" onclick="return doclink('link-6', 'sendMessage', 'link-6');">sendMessage</a></tt><tt class="py-op">(</tt><tt class="py-string">"NodeId:%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method model.observable.ILoggable.notifyObservers()=model.observable.ILoggable-class.html#notifyObservers,Method model.observable.IObservable.notifyObservers()=model.observable.IObservable-class.html#notifyObservers,Method model.observable.IObservableController.notifyObservers()=model.observable.IObservableController-class.html#notifyObservers,Method model.observable.IObservableServer.notifyObservers()=model.observable.IObservableServer-class.html#notifyObservers"><a title="model.observable.ILoggable.notifyObservers
+model.observable.IObservable.notifyObservers
+model.observable.IObservableController.notifyObservers
+model.observable.IObservableServer.notifyObservers" class="py-name" href="#" onclick="return doclink('link-7', 'notifyObservers', 'link-7');">notifyObservers</a></tt><tt class="py-op">(</tt><tt class="py-string">"NodeJoined"</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">         </tt>
+<a name="ChatServer.connectionLost"></a><div id="ChatServer.connectionLost-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="ChatServer.connectionLost-toggle" onclick="return toggle('ChatServer.connectionLost');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServer-class.html#connectionLost">connectionLost</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">reason</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServer.connectionLost-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServer.connectionLost-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">reason</tt><tt class="py-op">.</tt><tt class="py-name">type</tt> <tt class="py-op">==</tt> <tt class="py-name">ConnectionDone</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt class="py-name">clients</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">]</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="model.TwistedClient.ChatClientFactory.log
+model.TwistedServer.ChatServerFactory.log
+model.controller.Controller.log
+model.hash.Hash.log
+model.logger.Logger.__impl.log
+model.network.ClientWrapper.log
+model.network.ServerWrapper.log
+model.node.LocalNode.log
+model.observer.ILogObserver.log
+model.view.ChoiceScreen.log
+model.workMaster.WorkMaster.log
+model.workSlave.WorkSlave.log" class="py-name" href="#" onclick="return doclink('link-8', 'log', 'link-5');">log</a></tt><tt class="py-op">(</tt><tt class="py-string">'Signal'</tt><tt class="py-op">,</tt><tt class="py-string">'Client Disconnected'</tt><tt class="py-op">,</tt><tt class="py-string">'connectionLost'</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="model.observable.ILoggable.notifyObservers
+model.observable.IObservable.notifyObservers
+model.observable.IObservableController.notifyObservers
+model.observable.IObservableServer.notifyObservers" class="py-name" href="#" onclick="return doclink('link-9', 'notifyObservers', 'link-7');">notifyObservers</a></tt><tt class="py-op">(</tt><tt class="py-string">"NodeLeft"</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">             </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="model.TwistedClient.ChatClientFactory.log
+model.TwistedServer.ChatServerFactory.log
+model.controller.Controller.log
+model.hash.Hash.log
+model.logger.Logger.__impl.log
+model.network.ClientWrapper.log
+model.network.ServerWrapper.log
+model.node.LocalNode.log
+model.observer.ILogObserver.log
+model.view.ChoiceScreen.log
+model.workMaster.WorkMaster.log
+model.workSlave.WorkSlave.log" class="py-name" href="#" onclick="return doclink('link-10', 'log', 'link-5');">log</a></tt><tt class="py-op">(</tt><tt class="py-string">'Warning'</tt><tt class="py-op">,</tt><tt class="py-string">'Client Dropped'</tt><tt class="py-op">,</tt><tt class="py-string">'connectionLost'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"> </tt>
+<a name="ChatServer.lineReceived"></a><div id="ChatServer.lineReceived-def"><a name="L36"></a><tt class="py-lineno">36</tt> <a class="py-toggle" href="#" id="ChatServer.lineReceived-toggle" onclick="return toggle('ChatServer.lineReceived');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServer-class.html#lineReceived">lineReceived</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">line</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServer.lineReceived-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServer.lineReceived-expanded"><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="model.TwistedClient.ChatClientFactory.log
+model.TwistedServer.ChatServerFactory.log
+model.controller.Controller.log
+model.hash.Hash.log
+model.logger.Logger.__impl.log
+model.network.ClientWrapper.log
+model.network.ServerWrapper.log
+model.node.LocalNode.log
+model.observer.ILogObserver.log
+model.view.ChoiceScreen.log
+model.workMaster.WorkMaster.log
+model.workSlave.WorkSlave.log" class="py-name" href="#" onclick="return doclink('link-11', 'log', 'link-5');">log</a></tt><tt class="py-op">(</tt><tt class="py-string">'Signal'</tt><tt class="py-op">,</tt><tt class="py-string">'Observers: %s'</tt> <tt class="py-op">%</tt> <tt class="py-name">repr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt class="py-name">observers</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">'lineReceived'</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">factory</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="model.observable.ILoggable.notifyObservers
+model.observable.IObservable.notifyObservers
+model.observable.IObservableController.notifyObservers
+model.observable.IObservableServer.notifyObservers" class="py-name" href="#" onclick="return doclink('link-12', 'notifyObservers', 'link-7');">notifyObservers</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="ChatServerFactory"></a><div id="ChatServerFactory-def"><a name="L41"></a><tt class="py-lineno">41</tt> <a class="py-toggle" href="#" id="ChatServerFactory-toggle" onclick="return toggle('ChatServerFactory');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="model.TwistedServer.ChatServerFactory-class.html">ChatServerFactory</a><tt class="py-op">(</tt><tt class="py-base-class">ServerFactory</tt><tt class="py-op">,</tt><tt class="py-base-class">IObservableServer</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServerFactory-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ChatServerFactory-expanded"><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="ChatServerFactory.__init__"></a><div id="ChatServerFactory.__init__-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="ChatServerFactory.__init__-toggle" onclick="return toggle('ChatServerFactory.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServerFactory-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">idGenerator</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServerFactory.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServerFactory.__init__-expanded"><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt id="link-13" class="py-name"><a title="model.observable.IObservableServer" class="py-name" href="#" onclick="return doclink('link-13', 'IObservableServer', 'link-1');">IObservableServer</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method model.TwistedClient.ChatClientFactory.__init__()=model.TwistedClient.ChatClientFactory-class.html#__init__,Method model.TwistedClient.InputEventHandler.__init__()=model.TwistedClient.InputEventHandler-class.html#__init__,Method model.TwistedServer.ChatServerFactory.__init__()=model.TwistedServer.ChatServerFactory-class.html#__init__,Method model.charsetGenerators.ASCIIGenerator.__init__()=model.charsetGenerators.ASCIIGenerator-class.html#__init__,Method model.charsetGenerators.ASCIIGeneratorUpper.__init__()=model.charsetGenerators.ASCIIGeneratorUpper-class.html#__init__,Method model.charsetGenerators.AlphaGenerator.__init__()=model.charsetGenerators.AlphaGenerator-class.html#__init__,Method model.charsetGenerators.AlphaGeneratorUpper.__init__()=model.charsetGenerators.AlphaGeneratorUpper-class.html#__init__,Method model.charsetGenerators.AlphaNumericGenerator.__init__()=model.charsetGenerators.AlphaNumericGenerator-class.html#__init__,Method model.charsetGenerators.AlphaNumericGeneratorUpper.__init__()=model.charsetGenerators.AlphaNumericGeneratorUpper-class.html#__init__,Method model.charsetGenerators.ExtendedASCIIGenerator.__init__()=model.charsetGenerators.ExtendedASCIIGenerator-class.html#__init__,Method model.charsetGenerators.ExtendedASCIIGeneratorUpper.__init__()=model.charsetGenerators.ExtendedASCIIGeneratorUpper-class.html#__init__,Method model.charsetGenerators.NumericGenerator.__init__()=model.charsetGenerators.NumericGenerator-class.html#__init__,Method model.charsetGenerators.PrintableASCIIGenerator.__init__()=model.charsetGenerators.PrintableASCIIGenerator-class.html#__init__,Method model.charsetGenerators.PrintableASCIIGeneratorUpper.__init__()=model.charsetGenerators.PrintableASCIIGeneratorUpper-class.html#__init__,Method model.controller.Controller.__init__()=model.controller.Controller-class.html#__init__,Method model.hash.Hash.__init__()=model.hash.Hash-class.html#__init__,Method model.idGenerator.IDGenerator.__init__()=model.idGenerator.IDGenerator-class.html#__init__,Method model.logger.Logger.__impl.__init__()=model.logger.Logger.__impl-class.html#__init__,Method model.logger.Logger.__init__()=model.logger.Logger-class.html#__init__,Method model.network.ClientWrapper.__init__()=model.network.ClientWrapper-class.html#__init__,Method model.network.ServerWrapper.__init__()=model.network.ServerWrapper-class.html#__init__,Method model.node.LocalNode.__init__()=model.node.LocalNode-class.html#__init__,Method model.node.NetworkedNode.__init__()=model.node.NetworkedNode-class.html#__init__,Method model.node.Node.__init__()=model.node.Node-class.html#__init__,Method model.observable.ILoggable.__init__()=model.observable.ILoggable-class.html#__init__,Method model.observable.IObservable.__init__()=model.observable.IObservable-class.html#__init__,Method model.observable.IObservableController.__init__()=model.observable.IObservableController-class.html#__init__,Method model.observable.IObservableServer.__init__()=model.observable.IObservableServer-class.html#__init__,Method model.observer.ILogObserver.__init__()=model.observer.ILogObserver-class.html#__init__,Method model.observer.printObserver.__init__()=model.observer.printObserver-class.html#__init__,Method model.task.ParallelTask.__init__()=model.task.ParallelTask-class.html#__init__,Method model.task.Task.__init__()=model.task.Task-class.html#__init__,Method model.view.ChoiceScreen.__init__()=model.view.ChoiceScreen-class.html#__init__,Method model.workMaster.WorkMaster.__init__()=model.workMaster.WorkMaster-class.html#__init__,Method model.workRange.WorkRange.__init__()=model.workRange.WorkRange-class.html#__init__,Method model.workSlave.WorkSlave.__init__()=model.workSlave.WorkSlave-class.html#__init__"><a title="model.TwistedClient.ChatClientFactory.__init__
+model.TwistedClient.InputEventHandler.__init__
+model.TwistedServer.ChatServerFactory.__init__
+model.charsetGenerators.ASCIIGenerator.__init__
+model.charsetGenerators.ASCIIGeneratorUpper.__init__
+model.charsetGenerators.AlphaGenerator.__init__
+model.charsetGenerators.AlphaGeneratorUpper.__init__
+model.charsetGenerators.AlphaNumericGenerator.__init__
+model.charsetGenerators.AlphaNumericGeneratorUpper.__init__
+model.charsetGenerators.ExtendedASCIIGenerator.__init__
+model.charsetGenerators.ExtendedASCIIGeneratorUpper.__init__
+model.charsetGenerators.NumericGenerator.__init__
+model.charsetGenerators.PrintableASCIIGenerator.__init__
+model.charsetGenerators.PrintableASCIIGeneratorUpper.__init__
+model.controller.Controller.__init__
+model.hash.Hash.__init__
+model.idGenerator.IDGenerator.__init__
+model.logger.Logger.__impl.__init__
+model.logger.Logger.__init__
+model.network.ClientWrapper.__init__
+model.network.ServerWrapper.__init__
+model.node.LocalNode.__init__
+model.node.NetworkedNode.__init__
+model.node.Node.__init__
+model.observable.ILoggable.__init__
+model.observable.IObservable.__init__
+model.observable.IObservableController.__init__
+model.observable.IObservableServer.__init__
+model.observer.ILogObserver.__init__
+model.observer.printObserver.__init__
+model.task.ParallelTask.__init__
+model.task.Task.__init__
+model.view.ChoiceScreen.__init__
+model.workMaster.WorkMaster.__init__
+model.workRange.WorkRange.__init__
+model.workSlave.WorkSlave.__init__" class="py-name" href="#" onclick="return doclink('link-14', '__init__', 'link-14');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">clients</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">protocol</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name" targets="Class model.TwistedServer.ChatServer=model.TwistedServer.ChatServer-class.html"><a title="model.TwistedServer.ChatServer" class="py-name" href="#" onclick="return doclink('link-15', 'ChatServer', 'link-15');">ChatServer</a></tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Module model.idGenerator=model.idGenerator-module.html"><a title="model.idGenerator" class="py-name" href="#" onclick="return doclink('link-16', 'idGenerator', 'link-16');">idGenerator</a></tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="model.idGenerator" class="py-name" href="#" onclick="return doclink('link-17', 'idGenerator', 'link-16');">idGenerator</a></tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="model.logger" class="py-name" href="#" onclick="return doclink('link-18', 'logger', 'link-2');">logger</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="model.logger.Logger" class="py-name" href="#" onclick="return doclink('link-19', 'Logger', 'link-3');">Logger</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="model.TwistedClient.ChatClientFactory.log
+model.TwistedServer.ChatServerFactory.log
+model.controller.Controller.log
+model.hash.Hash.log
+model.logger.Logger.__impl.log
+model.network.ClientWrapper.log
+model.network.ServerWrapper.log
+model.node.LocalNode.log
+model.observer.ILogObserver.log
+model.view.ChoiceScreen.log
+model.workMaster.WorkMaster.log
+model.workSlave.WorkSlave.log" class="py-name" href="#" onclick="return doclink('link-20', 'log', 'link-5');">log</a></tt><tt class="py-op">(</tt><tt class="py-string">'Signal'</tt><tt class="py-op">,</tt><tt class="py-string">'Server Started'</tt><tt class="py-op">,</tt><tt class="py-string">'__init__'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
+<a name="ChatServerFactory.sendMessage"></a><div id="ChatServerFactory.sendMessage-def"><a name="L51"></a><tt class="py-lineno">51</tt> <a class="py-toggle" href="#" id="ChatServerFactory.sendMessage-toggle" onclick="return toggle('ChatServerFactory.sendMessage');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServerFactory-class.html#sendMessage">sendMessage</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">message</tt><tt class="py-op">,</tt><tt class="py-param">destination</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServerFactory.sendMessage-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServerFactory.sendMessage-expanded"><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">destination</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">clients</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">clients</tt><tt class="py-op">[</tt><tt class="py-name">destination</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">sendLine</tt><tt class="py-op">(</tt><tt class="py-name">message</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">                 </tt>
+<a name="ChatServerFactory.getID"></a><div id="ChatServerFactory.getID-def"><a name="L56"></a><tt class="py-lineno">56</tt> <a class="py-toggle" href="#" id="ChatServerFactory.getID-toggle" onclick="return toggle('ChatServerFactory.getID');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServerFactory-class.html#getID">getID</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServerFactory.getID-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServerFactory.getID-expanded"><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="model.idGenerator" class="py-name" href="#" onclick="return doclink('link-21', 'idGenerator', 'link-16');">idGenerator</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="model.TwistedServer.ChatServerFactory.getID
+model.idGenerator.IDGenerator.getID" class="py-name" href="#" onclick="return doclink('link-22', 'getID', 'link-4');">getID</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"> </tt>
+<a name="ChatServerFactory.log"></a><div id="ChatServerFactory.log-def"><a name="L59"></a><tt class="py-lineno">59</tt> <a class="py-toggle" href="#" id="ChatServerFactory.log-toggle" onclick="return toggle('ChatServerFactory.log');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer.ChatServerFactory-class.html#log">log</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">level</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">method</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ChatServerFactory.log-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ChatServerFactory.log-expanded"><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="model.logger" class="py-name" href="#" onclick="return doclink('link-23', 'logger', 'link-2');">logger</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="model.TwistedClient.ChatClientFactory.log
+model.TwistedServer.ChatServerFactory.log
+model.controller.Controller.log
+model.hash.Hash.log
+model.logger.Logger.__impl.log
+model.network.ClientWrapper.log
+model.network.ServerWrapper.log
+model.node.LocalNode.log
+model.observer.ILogObserver.log
+model.view.ChoiceScreen.log
+model.workMaster.WorkMaster.log
+model.workSlave.WorkSlave.log" class="py-name" href="#" onclick="return doclink('link-24', 'log', 'link-5');">log</a></tt><tt class="py-op">(</tt><tt class="py-name">level</tt><tt class="py-op">,</tt><tt class="py-name">data</tt><tt class="py-op">,</tt><tt class="py-name">method</tt><tt class="py-op">,</tt><tt class="py-string">'TwistedServer'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L62"></a><tt class="py-lineno">62</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="model.TwistedServer-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="main-expanded"><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Attempting to setup Server"</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">    <tt class="py-name">chatServerFactory</tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name" targets="Class model.TwistedServer.ChatServerFactory=model.TwistedServer.ChatServerFactory-class.html"><a title="model.TwistedServer.ChatServerFactory" class="py-name" href="#" onclick="return doclink('link-25', 'ChatServerFactory', 'link-25');">ChatServerFactory</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">    <tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">args</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-name">arg</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">    <tt class="py-name">port</tt> <tt class="py-op">=</tt> <tt class="py-number">8000</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">            <tt class="py-name">port</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'arguments: '</tt><tt class="py-op">,</tt><tt class="py-name">port</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">    <tt class="py-name">endpoint</tt> <tt class="py-op">=</tt> <tt class="py-name">TCP4ServerEndpoint</tt><tt class="py-op">(</tt><tt class="py-name">reactor</tt><tt class="py-op">,</tt> <tt class="py-name">port</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">    <tt class="py-name">endpoint</tt><tt class="py-op">.</tt><tt class="py-name">listen</tt><tt class="py-op">(</tt><tt class="py-name">chatServerFactory</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">    <tt class="py-name">reactor</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method model.TwistedClient.InputEventHandler.run()=model.TwistedClient.InputEventHandler-class.html#run"><a title="model.TwistedClient.InputEventHandler.run" class="py-name" href="#" onclick="return doclink('link-26', 'run', 'link-26');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">     </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">    <tt id="link-27" class="py-name" targets="Function model.TwistedClient.main()=model.TwistedClient-module.html#main,Function model.TwistedServer.main()=model.TwistedServer-module.html#main,Method model.controller.Controller.main()=model.controller.Controller-class.html#main"><a title="model.TwistedClient.main
+model.TwistedServer.main
+model.controller.Controller.main" class="py-name" href="#" onclick="return doclink('link-27', 'main', 'link-27');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="model-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Sep 15 00:24:40 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
