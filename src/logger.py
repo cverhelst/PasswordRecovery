@@ -1,43 +1,6 @@
 from datetime import datetime
 from multiprocessing import Lock
 
-#class Logger(object):
-#
-#    """
-#    TODO:
-#            Make singleton (ish)
-#            Make Enums for log types
-#    NOTE:
-#            Currently thread-safe but implemented with locks
-#    """
-#
-#    __lock = Lock()
-#
-#    def log(self,level,data, method='',name=''):
-#
-#        name = name.ljust(15)
-#        method = method.rjust(20)
-#
-#        level = level.ljust(7)
-#        now = str(datetime.now()).split('.')[0]
-#
-#        if method is not '':
-#            hasMethod = '-'
-#        else:
-#            hasMethod = ' '
-#
-#        Logger.__lock.acquire()
-#        print "[%s] %s %s %s ~*~ %s : %s" % (now,name,hasMethod,method,level,data)
-#        Logger.__lock.release()
-#
-#
-#if __name__ == "__main__":
-#    print "Hello World"
-
-#DEBUG:Causes reactor.stop() to not work properly ->
-#                   Tkinter window remains, without functionality, python processes not terminated
-# main suspect: Timer
-
 class Logger(object):
 
     """TODO: Make singleton (ish)

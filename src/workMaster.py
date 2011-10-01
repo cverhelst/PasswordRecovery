@@ -114,7 +114,7 @@ class WorkMaster(IServerObserver,IObserver, IObserverController, IObservable):
 #        callbacks.append(self.setToWork)
 #        callbacks.append(self.fetchResults)
 
-        self.log('Signal','deferring runBenches to * thread','work')
+        self.log('Signal','deferring runBenches to thread','work')
 
 #        for fetcher in fetchers:
 #            threads.deferToThread(fetcher())
@@ -262,7 +262,11 @@ class WorkMaster(IServerObserver,IObserver, IObserverController, IObservable):
     def getMaxTime(self,hashSpeed):
         """Determine max seconds to run"""
 
-        possiblePasswords = len(self.charset) ** self.length
+        possiblePasswords = 0
+        length = self.length
+        while length > 0:
+            possiblePasswords += len(self.charset) ** length
+            length -= 1
         seconds = possiblePasswords // hashSpeed
 
         self.log('Signal','Maximum seconds to run is %ds with a HashSpeed of %d and %d possibilities' % (seconds,hashSpeed,possiblePasswords),'getMaxTime')

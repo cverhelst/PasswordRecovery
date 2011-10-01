@@ -22,7 +22,7 @@ class View(object):
         tksupport.install(self.top)
 
         self.top.title('Chat')
-        self.top.geometry( '700x700' )
+        self.top.geometry( '700x680' )
 
         def callback():
             self.stop()
@@ -437,7 +437,8 @@ class View(object):
 
     def reset(self):
 
-        self.currentTime.set(0)
+        self.resetTime()
+        #self.currentTime.set(0)
 
     def setSliderMax(self,value):
 

@@ -141,6 +141,7 @@ class Controller(IObserver):
         self.view.reset()
         self.timeRunning = 0
         self.runningBench = True
+        self.benches = {}
         self.interval()
 
         self.log('Signal','Running benchmark','runBenchmark')
@@ -164,9 +165,11 @@ class Controller(IObserver):
         hashSpeed = self.model.sumBenches(self.benches)
 
         self.runningBench = False
+        self.timeRunning = 0
 
         self.log('Signal','Received benchmark results: %s p/s' % hashSpeed,'benchCallback')
 
+        self.view.reset()
         self.updateBenchResults(hashSpeed)
 
     def updateBenchResults(self,hashSpeed):

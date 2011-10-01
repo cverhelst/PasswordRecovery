@@ -1,5 +1,6 @@
 from hash import Hash
 import multiprocessing
+import threading
 
 import charsetGenerators
 from hash import Hash
@@ -52,6 +53,7 @@ class LocalNode(Node):
         self.nodeId = nodeId
         self.logger = Logger()
         self.results = multiprocessing.Queue()
+        self.exit = multiprocessing.Event()
         self.coreCount = multiprocessing.cpu_count()
         self.maxProcesses = self.coreCount * 2
         self.processes = []
@@ -64,8 +66,11 @@ class LocalNode(Node):
 
         if charset == None:
             charset = charsetGenerators.PrintableASCIIGeneratorUpper().getCharset()
-
-        max = len(charset) ** length
+        max = 0
+        l = length
+        while l > 0:
+            max += len(charset) ** l
+            l -= 1
 
         arg = 'node.LocalNode().benchmark("%s",%s,%d)' % (hashFunction,repr(charset),length)
         t = timeit.Timer(arg,'import node')
@@ -97,8 +102,9 @@ class LocalNode(Node):
 
         self.guessPasswords(password, hashFunction, primer, prefix, charset,length)
 
+        self.log('***Signal','self.working:%s' % repr(self.working),'benchmark')
         while self.working:
-            pass
+            time.sleep(1)
 
         self.log('Signal','Benchmark finished','benchmark')
 
@@ -125,6 +131,8 @@ class LocalNode(Node):
 
         # it is possible to have more tasks than there are cores
         taskCount = len(prefix)
+        
+        self.exit = multiprocessing.Event()
 
         work = range(taskCount)
 
@@ -137,17 +145,17 @@ class LocalNode(Node):
             args.append(charset)
             args.append(length)
             args.append(self.results)
+            args.append(self.exit)
 
             args = tuple(args)
             work[i] = args
 
         self.processes = []
-
         self.log('Signal','Starting subprocesses enabling parallelism','guessPasswords')
 
         # initialize the processes
         for i in range(taskCount):
-            p = apply(task.Task,work[i])
+            p = threading.Thread(target=task.Task, args=work[i])
             self.processes.append(p)
 
 #        if not bench:
@@ -248,21 +256,20 @@ class LocalNode(Node):
         notification = 'Results:' + repr(result)
         self.notifyObservers(notification)
 
-
     def stopWork(self):
 
         self.working = False
+        self.exit.set()
 
-        for process in self.processes:
-            process.shutdown()
-            process.join()
+        for p in self.processes:
+            p.join()
 
+        self.processes = []
 
-        for process in self.running:
-            process.shutdown()
-            process.join()
+        for r in self.running:
+            r.join()
 
-        time.sleep(1)
+        self.running = []
 
         self.log('Signal','Stopped work processes','stopWork')
 
