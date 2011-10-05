@@ -416,35 +416,54 @@ class View(object):
         button.config(state=DISABLED)
         self.disabledStack.append(button)
 
-    def resetTime(self):
+    def updateCurrentTime(self,currentTime):
+        self.currentTime.set(currentTime)
+        if currentTime > self.progressBar['maximum']:
+            self.progressBar['maximum'] = currentTime
 
-        self.currentTime.set(0)
-        time = self.controller.secondsToTime(0)
-        self.currentTimeAsDate.set(time)
+    def updateCurrentTimeString(self,currentTime):
+        self.currentTimeAsDate.set(currentTime)
 
-    def updateTime(self,time):
-        """Increment the clock ( string )"""
+    def updateMaxTime(self,maxTime):
+        self.progressBar['maximum'] = ( maxTime - 1 )
 
-        self.currentTimeAsDate.set(time)
+    def updateMaxTimeString(self,maxTime):
+        self.maxTimeAsDate.set(maxTime)
 
-    def incrementProgress(self,time):
-        """Increment progress ( int )"""
-
-        if time > self.progressBar['maximum']:
-            self.progressBar['maximum'] = time
-        self.currentTime.set(time)
+    def updateHashSpeed(self,hashSpeed):
+        self.hashSpeed = hashSpeed
 
 
-    def reset(self):
 
-        self.resetTime()
-        #self.currentTime.set(0)
-
-    def setSliderMax(self,value):
-
-        #self.scaleProgress['to'] = value
-        self.progressBar['maximum'] = ( value - 1 )
-        self.log('Signal','Progressbar max = %ds' % value,'setSliderMax')
+#    def resetTime(self):
+#
+#        self.currentTime.set(0)
+#        time = self.controller.secondsToTime(0)
+#        self.currentTimeAsDate.set(time)
+#
+#    def updateTime(self,time):
+#        """Increment the clock ( string )"""
+#
+#        self.currentTimeAsDate.set(time)
+#
+#    def incrementProgress(self,time):
+#        """Increment progress ( int )"""
+#
+#        if time > self.progressBar['maximum']:
+#            self.progressBar['maximum'] = time
+#        self.currentTime.set(time)
+#
+#
+#    def reset(self):
+#
+#        self.resetTime()
+#        #self.currentTime.set(0)
+#
+#    def setSliderMax(self,value):
+#
+#        #self.scaleProgress['to'] = value
+#        self.progressBar['maximum'] = ( value - 1 )
+#        self.log('Signal','Progressbar max = %ds' % value,'setSliderMax')
 
     def reactivateButtons(self):
 

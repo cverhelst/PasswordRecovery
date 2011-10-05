@@ -8,6 +8,7 @@ from twisted.internet import reactor
 from view import View
 from workMaster import WorkMaster
 from remoteNodeInterface import RemoteNodeInterface
+from timeController import TimeController
 import internetIP
 
 class Controller(IObserver):
@@ -28,6 +29,7 @@ class Controller(IObserver):
         self.benchQueue = multiprocessing.Queue()
         self.resultQueue = multiprocessing.Queue()
         self.updates = multiprocessing.Queue()
+        self.timeController = ''
 
     def main(self):
 
@@ -41,12 +43,14 @@ class Controller(IObserver):
         self.model.setupServer(port)
         self.model.addLocalNode()
         self.model.registerObserver(self)
+        self.timeController = TimeController(self.model,self.view)
 
     def setupClient(self,host='localhost',port=55555):
         """Sets up the client"""
 
         self.model = RemoteNodeInterface()
         self.model.setupClient(host,port)
+        self.timeController = TimeController(self.model,self.view)
 
     def setPasswords(self,passwords):
         
@@ -138,8 +142,9 @@ class Controller(IObserver):
     def runBenchmark(self):
         """WorkMaster method"""
 
-        self.view.reset()
-        self.timeRunning = 0
+#        self.view.reset()
+#        self.timeRunning = 0
+        self.timeController.reset()
         self.runningBench = True
         self.benches = {}
         self.interval()
@@ -165,7 +170,7 @@ class Controller(IObserver):
         hashSpeed = self.model.sumBenches(self.benches)
 
         self.runningBench = False
-        self.timeRunning = 0
+#        self.timeRunning = 0
 
         self.log('Signal','Received benchmark results: %s p/s' % hashSpeed,'benchCallback')
 
@@ -174,14 +179,16 @@ class Controller(IObserver):
 
     def updateBenchResults(self,hashSpeed):
 
-        self.view.showHashSpeed(hashSpeed)
-        self.updateMaxTimeAsDate(hashSpeed)
+#        self.view.showHashSpeed(hashSpeed)
+#        self.updateMaxTimeAsDate(hashSpeed)
+        self.timeController.updateMaxTime(hashSpeed)
 
     def runWork(self):
         """WorkMaster method"""
 
-        self.view.reset()
-        self.timeRunning = 0
+#        self.view.reset()
+#        self.timeRunning = 0
+        self.timeController.resetCurrentTime()
         self.runningWork = True
 
         self.benches = {}
@@ -210,7 +217,7 @@ class Controller(IObserver):
             reactor.callLater(1.0,self.fetchResults)
         
     def workCallback(self,results):
-    
+        
         self.view.showResults(results)
 
         self.log('Signal','Added results','workCallback')
@@ -219,11 +226,15 @@ class Controller(IObserver):
 
 #        self.updateView()
         if self.runningBench or self.runningWork:
-            self.increment()
+
+            self.timeController.updateCurrentTime()
+#            self.increment()
             reactor.callLater(1,self.interval)
         else:
-            self.increment()
-            self.view.reactivateButtons()
+            self.timeController.updateCurrentTime()
+            self.timeController.stop()
+#            self.increment()
+#            self.view.reactivateButtons()
 
     def makeHash(self,hashFunction,key):
 

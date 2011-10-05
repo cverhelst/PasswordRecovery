@@ -12,7 +12,7 @@ import timeit
 import time
 import os
 
-from twisted.internet import threads, reactor
+from twisted.internet import threads, reactor, defer
 from workRange import WorkRange
 
 class Node(observable.IObservable):
@@ -103,8 +103,9 @@ class LocalNode(Node):
         self.guessPasswords(password, hashFunction, primer, prefix, charset,length)
 
         self.log('***Signal','self.working:%s' % repr(self.working),'benchmark')
+
         while self.working:
-            time.sleep(1)
+            time.sleep(1);
 
         self.log('Signal','Benchmark finished','benchmark')
 
@@ -193,6 +194,8 @@ class LocalNode(Node):
 #
 #                        # remove the process from the running list
 #                        self.running.remove(p)
+
+
 
     def initializeManager(self):
 
