@@ -279,5 +279,5 @@ class LocalNode(Node):
 if __name__ == '__main__':
 
     local = LocalNode()
-    local.registerObserver(observer.printObserver())
+    #local.registerObserver(observer.printObserver())
     local.runBenchmark(length=3)
